@@ -19,9 +19,9 @@ class ownersview(View):
         return JsonResponse({'MESSAGE':'CREATED'}, status=201)
     
     def get(self, request):
-        products = Owner.objects.all()
+        owners = Owner.objects.all()
         results = []
-        for owner in products:
+        for owner in owners:
             results.append(
                 {
                     "name"      : owner.name,
@@ -43,9 +43,9 @@ class dogsview(View):
         return JsonResponse({'MESSAGE':'CREATED'}, status=201)
 
     def get(self, request):
-        products = Dog.objects.all()
+        owners = Dog.objects.all()
         results = []
-        for dog in products:
+        for dog in owners:
             results.append(
                 {
                     "dog"       :dog.name,

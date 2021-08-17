@@ -5,14 +5,14 @@ import json
 from django.http import JsonResponse
 from django.views import View
 
-from products.models import Owner, Dog
+from owners.models import Owner, Dog
 
 class ownersview(View):
     def post(self, request):
         data    = json.loads(request.body) #py과 js의 다른 언어를 json 형태로 변환해준다.
                  
         owner   = Owner.objects.create(
-            name    = data['name'],#owner라는 값을 가진 키를 가져오겠다.
+            name    = data['name'], #Owner에서 name이라는 값을 가진 키를 가져오겠다.
             email   = data['email'],
             age     = data['owner_age'],
         )
